@@ -1,0 +1,134 @@
+.format_as_inline_block{
+  display: inline-block;
+}
+img{
+  max-width: 100%;
+  max-height: 100%;
+}
+ h2, h3{
+  background: linear-gradient(#afafb2,#888594,#afafb2);
+  color: #feffff;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding:5px;
+}
+#wrapper{
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#name_header{
+  background-color: #f1f1f1;
+  padding: 20px;
+  width: 1050px;
+  height: 50px;
+}
+#name, #motto{
+  display: inline-block;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+}
+#motto{
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+#portrait_image{
+  width:500px;
+  padding: 5px;
+  background-color: #c0c0c0;
+}
+#about_me{
+  display: inline-block;
+  width: 520px;
+  height:343px;
+  float: right;
+  /*background-color: white;*/
+  background: linear-gradient(to right, #fefefe,#ddcada);
+  /*opacity: 0.80;*/
+  /*padding: 10px;*/
+}
+#about_me p{
+  margin: 10px;
+}
+#about_me a{
+  color: black;
+  margin:10px;
+}
+#main_content_block{
+  display: inline-block;
+  background: radial-gradient(#846475,#1c090e);
+  padding: 20px;
+  width:1050px;
+}
+#name_header H2{
+  color: black;
+  background: inherit;
+  float:right;
+  margin-top: 30px;
+}
+.tech_images img{
+  height: 40px;
+  opacity: 1;
+}
+.tech_images {
+  padding: 10px;
+}
+.portfolio_images{
+  max-width: 100%;
+  max-height: 100%;
+}
+#la_mode, #family_contacts{
+  width: 330px;
+  height: 600px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 26px;
+  /*background-color: white;*/
+  background: linear-gradient(to right, #fefefe,#ddcada);
+  /*opacity: 0.85;*/
+  /*padding: 10px;*/
+}
+#five_eleven{
+  width: 330px;
+  height: 600px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 0px;
+  /*background-color: white;*/
+  background: linear-gradient(to right, #fefefe,#ddcada);
+  /*opacity: 0.85;*/
+  /*padding: 10px;*/
+  float: right;
+}
+#la_mode a, #family_contacts a, #five_eleven a{
+  background-color: #267f5f;
+  color: #feffff;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 70px;
+  margin-left: 70px;
+  display: block;
+  text-align: center;
+}
+#la_mode p, #family_contacts p, #five_eleven p{
+
+  margin-right: 10px;
+  margin-left: 10px;
+
+}
+.portfolio_descriptions{
+  height: 150px;
+}
+#portfolio_examples div{
+  vertical-align: top;
+}
+#social_links img{
+  height:20px;
+}
+
+#contact_info{
+  background-color: #f1f1f1;
+  width: 1050px;
+  height: 70px;
+  padding: 20px;
+  text-align: center;
+}
