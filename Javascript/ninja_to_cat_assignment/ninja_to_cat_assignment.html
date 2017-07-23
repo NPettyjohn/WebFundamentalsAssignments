@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja To Cat Assignment</title>
+    <link rel="stylesheet" href="ninja_to_cat_assignment.css">
+    <script type="text/javascript" src="jquery.js">
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        // Scramble images
+          $("img").each(function(){
+            if (Math.random()>.5) {
+              var src_string = $(this).attr("src");
+              // alert(src_string);
+              $(this).attr("src",$(this).attr("data-alt-src"));
+              $(this).attr("data-alt-src", src_string);
+            }
+            // alert($(this).attr("src"));
+          })
+        // Toggle the image when clicked by user.
+          $("img").click(function(){
+            var src_string = $(this).attr("src");
+            // alert(src_string);
+            $(this).attr("src",$(this).attr("data-alt-src"));
+            $(this).attr("data-alt-src", src_string);
+          })
+      })
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="puzzle_area">
+        <img src="ninja0.png" data-alt-src="cat0.png" alt="puzzle_piece_0">
+        <img src="ninja1.png" data-alt-src="cat1.png" alt="puzzle_piece_1">
+        <img src="ninja2.png" data-alt-src="cat2.png" alt="puzzle_piece_2">
+        <img src="ninja3.png" data-alt-src="cat3.png" alt="puzzle_piece_3">
+        <img src="ninja4.png" data-alt-src="cat4.png" alt="puzzle_piece_4">
+      </div>
+    </div>
+  </body>
+</html>
