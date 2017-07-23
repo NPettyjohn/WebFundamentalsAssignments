@@ -1,0 +1,41 @@
+#hide_show_toggle{
+  border: 5px solid black;
+  padding: 5px;
+}
+#hide_show_toggle.change_format_with_added_class{
+  border: 3px solid red;
+  color: red;
+  background-color: pink;
+}
+#buttons_seventh_row button, #buttons_eighth_row button{
+  margin-top: 10px;
+  margin-right: 10px;
+  height: 80px;
+  width: 100px;
+  border-radius: 5px;
+  color: black;
+  background-color: #dadcdc;
+  vertical-align: top;
+}
+.button_formats{
+  margin-top: 10px;
+  margin-right: 10px;
+  height: 60px;
+  width: 100px;
+  border-radius: 5px;
+  color: black;
+  background-color: #dadcdc;
+  vertical-align: top;
+}
+#bottom_test_box{
+  margin-top: 15px;
+  border: 5px solid black;
+  padding: 5px;
+}
+span{
+  font-style: italic;
+  color: red;
+}
+input{
+  width: 200px;
+}

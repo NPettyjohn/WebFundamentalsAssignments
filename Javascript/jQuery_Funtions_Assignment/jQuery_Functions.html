@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Functions Assignment</title>
+    <!--
+    List of jQuery functions used in this file:
+    - .click         - .before
+    - .hide          - .after
+    - .show          - .append
+    - .toggle        - .html
+    - .slideDown     - .attr
+    - .slideUp       - .val
+    - .slideToggle   - .text
+    - .fadeIn        - .data
+    - .fadeOut
+    - .addClass
+     -->
+    <script type="text/javascript" src="jquery.js"></script>
+    <link rel="stylesheet" href="jQuery_Functions.css">
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        // Show, hide, or toggle div using buttons. Buttons will shift up the page as div is hidden.
+          $('#hide_button').click(function(){
+            // alert("Hide button is working!");
+            $('#hide_show_toggle').hide();
+          })
+          $('#show_button').click(function(){
+            // alert("Show button is working!");
+            $('#hide_show_toggle').show();
+          })
+          $('#toggle_button').click(function(){
+            // alert("Toggle button is working!");
+            $('#hide_show_toggle').toggle();
+          })
+        // Show, hide, or toggle div using buttons (uses CSS visibility property). Buttons will not shift up the page as div is hidden.
+          $('#make_visible_button').click(function(){
+            $('#hide_show_toggle').css('visibility','visible');
+          })
+          $('#make_invisible_button').click(function(){
+            $('#hide_show_toggle').css('visibility','hidden');
+          })
+          $('#toggle_visible_button').click(function(){
+            if ($('#hide_show_toggle').css('visibility') === 'hidden') {
+              $('#hide_show_toggle').css('visibility','visible');
+            }
+            else if ($('#hide_show_toggle').css('visibility') === 'visible') {
+              $('#hide_show_toggle').css('visibility','hidden');
+            }
+          })
+        //  Slide functions.
+          $('#slide_up_button').click(function(){
+            $('#hide_show_toggle').slideUp();
+          })
+          $('#slide_down_button').click(function(){
+            $('#hide_show_toggle').slideDown();
+          })
+          $('#slide_toggle_button').click(function(){
+            $('#hide_show_toggle').slideToggle();
+          })
+        // Fade fuctions.
+          $('#fade_in_button').click(function(){
+            $('#hide_show_toggle').fadeIn();
+          })
+          $('#fade_out_button').click(function(){
+            $('#hide_show_toggle').fadeOut();
+          })
+          $('#toggle_fade_button').click(function(){
+            $('#hide_show_toggle').fadeToggle();
+          })
+        // Add class to main example div to change formatting by applying
+        // different css style.
+          $('#add_class_button').click(function(){
+            $('#hide_show_toggle').addClass("change_format_with_added_class");
+          })
+          $('#remove_class_button').click(function(){
+            $('#hide_show_toggle').removeClass("change_format_with_added_class");
+          })
+          $('#toggle_class_button').click(function(){
+            if ($('#hide_show_toggle').hasClass("change_format_with_added_class")) {
+              $('#hide_show_toggle').removeClass("change_format_with_added_class");
+            }
+            else {
+              $('#hide_show_toggle').addClass("change_format_with_added_class");
+            }
+          })
+        // Add image before <p> in the test div box.
+          $('#add_image_before_button').click(function(){
+            $('#hide_show_toggle p').before("<img class='sailboat_image' src='sailboat.jpg' alt='image of sailboat'>");
+          })
+          $('#add_image_after_button').click(function(){
+            $('#hide_show_toggle p').after("<img class='sailboat_image' src='sailboat.jpg' alt='image of sailboat'>");
+          })
+          $('#remove_images_button').click(function(){
+            $('#hide_show_toggle .sailboat_image').remove();
+            $('#hide_show_toggle .rick_astley_meme').remove();
+          })
+        // Append, html, attr, val, text, and data fuctions.
+          $('#append_button').click(function(){
+            $('#bottom_test_box p').append(" <span> Never gonna give you up, never gonna let you down, Never gonna run around and desert you, Never gonna make you cry, never gonna say goodbye, Never gonna tell a lie and hurt you</span>");
+          })
+          $('#html_button').click(function(){
+            $('#bottom_test_box h1').html("This is now the Rick Astley Test Box!!");
+          })
+          $('#attr_button').click(function(){
+            $('#hide_show_toggle .sailboat_image').attr("src", "Rick_Astley.jpg");
+            $('#hide_show_toggle .sailboat_image').attr("class", "rick_astley_meme");
+            $('#hide_show_toggle .rick_astley_meme').attr("alt", "rick astley meme");
+          })
+          $('#val_button').click(function(){
+            $('input').val("Never Gonna Give You Up");
+          })
+          $('#text_button').click(function(){
+            $('#bottom_test_box p').text("Click the buttons below to perform different Rick Astley related actions on this box using jQuery functions.");
+          })
+          $('#data_button').click(function(){
+            $('#bottom_test_box').data("status", "Rick_Rolled");
+            alert("You've successfully set your status to: " + $('#bottom_test_box').data("status"));
+          })
+      })
+    </script>
+
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="hide_show_toggle" >
+        <h1>This is the jQuery function test area.</h1>
+        <p>Click the buttons below to perform different actions on this box using jQuery functions.</p>
+      </div>
+      <div id="show_hide_toggle_buttons">
+        <div id="buttons_first_row">
+          <button class="button_formats" type="button" name="show_button" id="show_button">Show</button>
+          <button class="button_formats" type="button" name="hide_button" id="hide_button">Hide</button>
+          <button class="button_formats" type="button" name="toggle_button" id="toggle_button">Toggle</button>
+        </div>
+        <div id="buttons_second_row">
+          <button class="button_formats" type="button" name="make_visible_button" id="make_visible_button">Make Visible</button>
+          <button class="button_formats" type="button" name="make_invisible_button" id="make_invisible_button">Make Invisible</button>
+          <button class="button_formats" type="button" name="toggle_visible_button" id="toggle_visible_button">Toggle Visibility</button>
+        </div>
+        <div id="buttons_third_row">
+          <button class="button_formats" type="button" name="slide_up_button" id="slide_up_button">Slide Up</button>
+          <button class="button_formats" type="button" name="slide_down_button" id="slide_down_button">Slide Down</button>
+          <button class="button_formats" type="button" name="slide_toggle_button" id="slide_toggle_button">Slide Toggle</button>
+
+        </div>
+        <div id="buttons_fourth_row">
+          <button class="button_formats" type="button" name="fade_in_button" id="fade_in_button">Fade In</button>
+          <button class="button_formats" type="button" name="fade_out_button" id="fade_out_button">Fade Out</button>
+          <button class="button_formats" type="button" name="toggle_fade_button" id="toggle_fade_button">Toggle Fade</button>
+        </div>
+        <div id="buttons_fifth_row">
+          <button class="button_formats" type="button" name="add_class_button" id="add_class_button">Add Class to Change Format</button>
+          <button class="button_formats" type="button" name="remove_class_button" id="remove_class_button">Remove Added Format Class</button>
+          <button class="button_formats" type="button" name="toggle_class_button" id="toggle_class_button">Toggle Format</button>
+        </div>
+        <div id="buttons_sixth_row">
+          <button class="button_formats" type="button" name="add_image_before_button" id="add_image_before_button">Add Image Before Text</button>
+          <button class="button_formats" type="button" name="add_image_after_button" id="add_image_after_button">Add Image After Text</button>
+          <button class="button_formats" type="button" name="remove_images_button" id="remove_images_button">Remove Images</button>
+        </div>
+      </div>
+      <div id="bottom_test_box" >
+        <h1>This is another jQuery function test area.</h1>
+        <p>Click the buttons below to perform different actions on this box using jQuery functions.</p>
+        <label for="user_text_input">Please enter your favorite song: </label>
+        <input type="text" name="user_text_input" id="user_text_input" value="enter song here">
+        <div id="buttons_seventh_row">
+          <button class="button_formats" type="button" name="append_button" id="append_button">Append Text</button>
+          <button class="button_formats" type="button" name="html_button" id="html_button">Change Header HTML</button>
+          <button class="button_formats" type="button" name="attr_button" id="attr_button">Add Attribute (an image must already be displayed)</button>
+        </div>
+        <div id="buttons_eighth_row">
+          <button class="button_formats" type="button" name="val_button" id="val_button">Change Value</button>
+          <button class="button_formats" type="button" name="text_button" id="text_button">Change Paragraph Text</button>
+          <button class="button_formats" type="button" name="data_button" id="data_button">Add Status Data</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
