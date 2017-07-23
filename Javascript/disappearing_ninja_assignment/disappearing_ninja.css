@@ -1,0 +1,28 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+#wrapper{
+  margin-top: 20px;
+  margin-left: 15px;
+}
+h1{
+  /*margin: 20px, 0px;*/
+  margin-bottom: 20px;
+}
+#ninja_image_box{
+  border: 5px solid black;
+  width: 615px;
+}
+.ninja_images{
+width: 150px;
+}
+#restore_button{
+  margin-top: 30px;
+  /*margin-left: 20px;*/
+  height: 30px;
+  width: 100px;
+  color: white;
+  background-color: green;
+  font-size: 12pt;
+}
