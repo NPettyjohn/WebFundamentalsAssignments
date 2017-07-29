@@ -1,0 +1,63 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+#data_entry_form_area{
+  width: 250px;
+  margin-left: 30px;
+  margin-top: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#data_entry_form_area div{
+margin-bottom: 10px;
+}
+
+input{
+  float: right;
+  border: 2px solid black;
+}
+
+#description_input{
+  width: 250px;
+  height: 150px;
+}
+
+#description_input_area label{
+  display: inline-block;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#contact_card_area{
+  background-color: grey;
+  width: 400px;
+  min-height: 300px;
+  display: inline-block;
+  margin-left: 150px
+}
+
+button{
+  margin-top: 30px;
+  height: 30px;
+  width: 80px;
+  border: 2px solid black;
+}
+
+.contact_card{
+  width: 300px;
+  height: 150px;
+  background-color: white;
+  text-align: center;
+  padding-top: 50px;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  border: 5px solid black;
+}
+
+.contact_description{
+  visibility: hidden;
+}

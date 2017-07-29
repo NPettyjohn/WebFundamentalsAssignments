@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Card Assignment</title>
+    <link rel="stylesheet" href="contact_card_assignment.css">
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+      })
+      $(document).on("click","#add_user_button",function(){
+        $("#contact_card_area").append("<div class='contact_card'><h1>" + $('#first_name_input').val() + " " + $('#last_name_input').val() + "</h1><p class='tell_user_to_click'>Click for description!</p><p class='contact_description'>" + $('#description_input').val() + "</p></div>");
+      })
+      $(document).on("click",".contact_card",function(){
+        if ($(this).find(".contact_description").css("visibility")=="hidden") {
+          $(this).find(".contact_description").css('visibility','visible');
+          $(this).find("H1").css('visibility','hidden');
+          $(this).find(".tell_user_to_click").css('visibility','hidden');
+        }
+        else if ($(this).find(".contact_description").css("visibility")=="visible") {
+          $(this).find(".contact_description").css('visibility','hidden');
+          $(this).find("H1").css('visibility','visible');
+          $(this).find(".tell_user_to_click").css('visibility','visible');
+        }
+      })
+
+    </script>
+
+  </head>
+  <body>
+    <div id="data_entry_form_area">
+      <div id="first_name_input_area">
+        <label class="input_labels" for="first_name">First Name:</label>
+        <input id="first_name_input" type="text" name="first_name" value="">
+      </div>
+      <div id="last_name_input_area">
+        <label class="input_labels" for="last_name">Last Name:</label>
+        <input id="last_name_input" type="text" name="last_name" value="">
+      </div>
+      <div id="description_input_area">
+        <label class="input_labels" for="description">Description:</label>
+        <input id="description_input" type="text" name="description" value="">
+      </div>
+      <button id="add_user_button" type="submit" name="button">Add User</button>
+    </div>
+    <div id="contact_card_area">
+
+    </div>
+  </body>
+</html>
