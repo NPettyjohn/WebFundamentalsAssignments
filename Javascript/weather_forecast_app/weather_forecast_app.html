@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="weather_forecast_app.css">
+    <script type="text/javascript" src="jQuery.js"></script>
+    <script type="text/javascript">
+      var apiKey = "46182958405bf0beae47b0ac34e659a5"
+      $(document).ready(function(){
+        $("form").submit(function(){
+          // alert("it's working!!!");
+          // console.log("http://api.openweathermap.org/data/2.5/weather?q=London,uk&&appid=" + "46182958405bf0beae47b0ac34e659a5");
+          var urlString = "http://api.openweathermap.org/data/2.5/weather?q="+ $("#city_input").val() + "&units=imperial" + "&&appid=" + apiKey
+          console.log(urlString);
+          $.get(urlString,function(res){
+          // alert("it's working!!!");
+          console.log(res);
+          $("#api_response_display_area").html("<h1>" + res.name + "</h1><p>Temperature: " + res.main.temp + "</p>")
+
+          }, "json");
+          return false;
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <form id="entry_form">
+      <input id="city_input" type="text" name="city_input" value="Seattle">
+      <input id="search_weather_button" type="submit" name="search_weather_button" value="Search Weather"></input>
+    </form>
+    <div id="api_response_display_area">
+      <!-- <h1>SEATTLE</h1>
+      <p>Temperature: 64</p> -->
+    </div>
+  </body>
+</html>
