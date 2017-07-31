@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Game of Thrones</title>
+    <link rel="stylesheet" href="game_of_thrones_assignment.css">
+    <script type="text/javascript" src="jQuery.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+      })
+      $(document).on("click",".house_image",function(){
+        var i=1;
+        var currentHouseName
+        var clickedHouseName = $(this).attr("id")
+
+        do {
+          var urlString = "https://www.anapioficeandfire.com/api/houses/" + i
+          $.get(urlString,function(res){
+            currentHouseName = res.name;
+            if (currentHouseName == clickedHouseName) {
+              // console.log(res);
+              $("#house_info_area").html("<h3>House Details</h3>" + "<p id='house_name'>Name: " + res.name + "</p>" + "<p id='house_words'>Words: " + res.words + "</p>");
+
+              var house_titles_string
+
+              for (var j = 0; j < res.titles.length; j++) {
+                if ( j == 0) {
+                  house_titles_string = res.titles[j];
+                }
+                else {
+                  house_titles_string = house_titles_string + ", " + res.titles[j];
+                }
+              }
+              $("#house_info_area").append("<p id='house_titles'>Titles: " + house_titles_string + "</p>")
+            };
+          },"json");
+          i++;
+        } while(i < 445);
+
+
+
+      })
+    </script>
+
+  </head>
+  <body>
+    <img id="House Baratheon of King's Landing" class="house_image" src="baratheon.png" alt="house baratheon image">
+    <img id="House Lannister of Casterly Rock" class="house_image" src="lannister.jpg" alt="house lannister image">
+    <img id="House Stark of Winterfell" class="house_image" src="stark.jpg" alt="house stark image">
+    <img id="House Targaryen of King's Landing" class="house_image" src="targaryen.jpg" alt="house targaryen image">
+    <div id="house_info_area">
+      <h3>Click on images above for house details</h3>
+    </div>
+  </body>
+</html>
